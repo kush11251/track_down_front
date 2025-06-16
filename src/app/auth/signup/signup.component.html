@@ -98,8 +98,8 @@
             class="form-checkbox mr-2 mt-1 text-blue-600"
           />
           I agree to the
-          <a href="#" class="text-blue-500 ml-1">Terms of Service</a> and
-          <a href="#" class="text-blue-500 ml-1">Privacy Policy</a>
+          <p class="text-blue-500 ml-1" (click)="navigate('common/terms')">Terms of Service </p> and
+          <p class="text-blue-500 ml-1" (click)="navigate('common/privacy')">Privacy Policy</p>
         </label>
         <div *ngIf="f['consent'].touched && f['consent'].invalid" class="text-red-500 text-sm mt-1">
           You must agree to continue.

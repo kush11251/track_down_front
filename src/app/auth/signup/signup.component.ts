@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/fo
 import { userSignUpData } from '../../shared/models/signup.interface';
 import { ApiService } from '../../shared/services/api.service';
 import { ToastService } from '../../shared/services/toast.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -19,6 +20,7 @@ export class SignupComponent {
     private fb: FormBuilder,
     private apiService: ApiService,
     private toastService: ToastService,
+    private router: Router
   ) {
     this.signupForm = this.fb.group({
       fullName: ['', Validators.required],
@@ -107,5 +109,11 @@ export class SignupComponent {
         this.toastService.show("Sign Up Failed", "error")
       }
     });
+  }
+
+  navigate(route: string) {
+    console.log("Register Route: ", route)
+
+    this.router.navigateByUrl('/' + route)
   }
 }
