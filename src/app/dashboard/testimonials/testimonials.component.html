@@ -1,0 +1,96 @@
+<section class="bg-gray-50 py-16 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto text-center mb-12">
+    <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">What Our Customers Say</h2>
+    <p class="mt-4 text-gray-600 text-sm sm:text-base">
+      Join thousands of satisfied teams who have transformed their project management process.
+    </p>
+  </div>
+
+  <!-- Mobile Scrollable Layout -->
+  <div class="md:hidden overflow-x-auto scroll-smooth scrollbar-hide px-1 sm:px-4">
+    <div class="flex gap-4 snap-x snap-mandatory w-max pb-2">
+      <ng-container *ngFor="let testimonial of testimonials">
+        <div
+          class="snap-center relative z-10 min-w-[85vw] max-w-[90vw] bg-white rounded-xl p-6 shadow-[0_8px_16px_rgba(0,0,0,0.1)] hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
+        >
+          <!-- Star Rating -->
+          <div class="flex items-center mb-4 space-x-1 text-yellow-400">
+            <ng-container *ngFor="let i of [].constructor(testimonial.rating)">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                <path
+                  d="M10 15l-5.878 3.09L5.5 12.18 1 8.91l6.061-.88L10 3l2.939 5.03L19 8.91l-4.5 3.27 1.378 5.91z"
+                />
+              </svg>
+            </ng-container>
+            <ng-container *ngIf="testimonial.rating < 5">
+              <svg class="w-5 h-5 fill-current text-yellow-300" viewBox="0 0 20 20">
+                <path d="M10 15l-5.878 3.09L5.5 12.18 1 8.91l6.061-.88L10 3v12z" />
+              </svg>
+            </ng-container>
+          </div>
+
+          <!-- Testimonial Text -->
+          <p class="text-gray-700 text-sm mb-6 break-words whitespace-normal leading-relaxed">
+            "{{ testimonial.text }}"
+          </p>
+
+          <!-- Author Info -->
+          <div class="flex items-center space-x-4 mt-auto">
+            <img
+              [src]="testimonial.image"
+              [alt]="testimonial.name"
+              class="w-10 h-10 rounded-full object-cover"
+            />
+            <div>
+              <p class="font-semibold text-gray-800">{{ testimonial.name }}</p>
+              <p class="text-gray-500 text-xs">{{ testimonial.position }}</p>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+
+  <!-- Desktop Grid Layout -->
+  <div class="hidden md:grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
+    <ng-container *ngFor="let testimonial of testimonials">
+      <div
+        class="bg-white rounded-xl p-6 shadow-[0_8px_16px_rgba(0,0,0,0.1)] hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
+      >
+        <!-- Star Rating -->
+        <div class="flex items-center mb-4 space-x-1 text-yellow-400">
+          <ng-container *ngFor="let i of [].constructor(testimonial.rating)">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+              <path
+                d="M10 15l-5.878 3.09L5.5 12.18 1 8.91l6.061-.88L10 3l2.939 5.03L19 8.91l-4.5 3.27 1.378 5.91z"
+              />
+            </svg>
+          </ng-container>
+          <ng-container *ngIf="testimonial.rating < 5">
+            <svg class="w-5 h-5 fill-current text-yellow-300" viewBox="0 0 20 20">
+              <path d="M10 15l-5.878 3.09L5.5 12.18 1 8.91l6.061-.88L10 3v12z" />
+            </svg>
+          </ng-container>
+        </div>
+
+        <!-- Text -->
+        <p class="text-gray-700 text-sm mb-6 break-words whitespace-normal leading-relaxed">
+          "{{ testimonial.text }}"
+        </p>
+
+        <!-- Author -->
+        <div class="flex items-center space-x-4 mt-auto">
+          <img
+            [src]="testimonial.image"
+            [alt]="testimonial.name"
+            class="w-10 h-10 rounded-full object-cover"
+          />
+          <div>
+            <p class="font-semibold text-gray-800">{{ testimonial.name }}</p>
+            <p class="text-gray-500 text-xs">{{ testimonial.position }}</p>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</section>

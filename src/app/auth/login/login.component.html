@@ -1,0 +1,87 @@
+<!-- Banner -->
+<div class="bg-blue-600 py-10 px-4 text-white text-center">
+  <h1 class="text-2xl sm:text-3xl font-bold">Log in to Manage Your Projects</h1>
+  <p class="mt-2 text-sm sm:text-base">Access your dashboard and take control of your projects.</p>
+</div>
+
+<!-- Form Container -->
+<div class="flex justify-center items-center px-4 py-12 sm:py-16">
+  <div class="bg-white shadow-xl rounded-xl w-full max-w-md sm:max-w-lg md:max-w-md p-6 sm:p-8">
+
+    <h2 class="text-xl font-semibold mb-6 text-gray-800 text-center">Welcome back</h2>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
+      <!-- Email -->
+      <div class="mb-4">
+        <input 
+          type="email"
+          formControlName="email"
+          placeholder="your@email.com"
+          [ngClass]="{ 'border-red-500': f['email'].invalid && f['email'].touched }"
+          class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <div *ngIf="f['email'].touched && f['email'].invalid" class="text-red-500 text-sm mt-1">
+          <div *ngIf="f['email'].errors?.['required']">Email is required.</div>
+          <div *ngIf="f['email'].errors?.['email']">Enter a valid email.</div>
+        </div>
+      </div>
+
+      <!-- Password -->
+      <div class="mb-1">
+        <input 
+          type="password"
+          formControlName="password"
+          placeholder="Password"
+          [ngClass]="{ 'border-red-500': f['password'].invalid && f['password'].touched }"
+          class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <div *ngIf="f['password'].touched && f['password'].invalid" class="text-red-500 text-sm mt-1">
+          <div *ngIf="f['password'].errors?.['required']">Password is required.</div>
+          <div *ngIf="f['password'].errors?.['minlength']">Minimum 6 characters required.</div>
+        </div>
+      </div>
+
+      <!-- Forgot Password Link -->
+      <div class="mb-4 text-right">
+        <p class="text-sm text-blue-600 hover:underline" (click)="forgotPassword()">Forgot password?</p>
+      </div>
+
+      <!-- Dashboard Type -->
+      <!-- <div class="mb-4">
+        <select 
+          formControlName="dashboardType"
+          [ngClass]="{ 'border-red-500': f['dashboardType'].invalid && f['dashboardType'].touched }"
+          class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
+          <option disabled value="">Select dashboard type</option>
+          <option value="org_admin">Organization Admin</option>
+          <option value="org_user">Organization User</option>
+          <option value="nexus_user">Nexus User</option>
+          <option value="nexus_super_admin">Nexus Super Admin</option>
+        </select>
+        <div *ngIf="f['dashboardType'].touched && f['dashboardType'].invalid" class="text-red-500 text-sm mt-1">
+          Dashboard type is required.
+        </div>
+      </div> -->
+
+      <!-- Checkbox -->
+      <label class="flex items-center text-sm text-gray-700 mb-4">
+        <input type="checkbox" formControlName="remember" class="form-checkbox text-blue-600 mr-2 h-4 w-4" />
+        Keep me logged in
+      </label>
+
+      <!-- Login Button -->
+      <button 
+        type="submit"
+        class="bg-blue-600 text-white w-full p-3 rounded hover:bg-blue-700 transition font-medium">
+        Log in →
+      </button>
+
+      <!-- Footer Link -->
+      <p class="mt-4 text-center text-sm text-gray-600">
+        Don’t have an account? 
+        <a class="text-blue-600 font-medium hover:underline" routerLink="/auth/signup">Create one</a>
+      </p>
+    </form>
+  </div>
+</div>

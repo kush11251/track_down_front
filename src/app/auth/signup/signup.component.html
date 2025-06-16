@@ -1,0 +1,124 @@
+<!-- Banner -->
+<div class="bg-blue-600 py-10 px-4 text-white text-center">
+  <h1 class="text-2xl sm:text-3xl font-bold">Sign up to Start Managing Projects</h1>
+  <p class="mt-2 text-sm sm:text-base">Create your account and unlock project management tools.</p>
+</div>
+
+<!-- Form Container -->
+<div class="flex justify-center items-center my-12 px-4">
+  <div class="bg-white shadow-lg rounded-lg p-6 sm:p-8 w-full max-w-md">
+    <h2 class="text-xl font-semibold mb-6 text-gray-800 text-center">Create your account</h2>
+
+    <form [formGroup]="signupForm" (ngSubmit)="onSignup()" novalidate>
+
+      <!-- Full Name -->
+      <div class="mb-4">
+        <input
+          type="text"
+          formControlName="fullName"
+          placeholder="Full Name"
+          [ngClass]="{ 'border-red-500': f['fullName'].invalid && f['fullName'].touched }"
+          class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <div *ngIf="f['fullName'].touched && f['fullName'].invalid" class="text-red-500 text-sm mt-1">
+          Full Name is required.
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div class="mb-4">
+        <input
+          type="email"
+          formControlName="email"
+          placeholder="Email address"
+          [ngClass]="{ 'border-red-500': f['email'].invalid && f['email'].touched }"
+          class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <div *ngIf="f['email'].touched && f['email'].invalid" class="text-red-500 text-sm mt-1">
+          <div *ngIf="f['email'].errors?.['required']">Email is required.</div>
+          <div *ngIf="f['email'].errors?.['email']">Enter a valid email.</div>
+        </div>
+      </div>
+
+      <!-- Password -->
+      <div class="mb-2">
+        <input
+          type="password"
+          formControlName="password"
+          placeholder="Password"
+          [ngClass]="{ 'border-red-500': f['password'].invalid && f['password'].touched }"
+          class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <div *ngIf="f['password'].touched && f['password'].invalid" class="text-red-500 text-sm mt-1">
+          <div *ngIf="f['password'].errors?.['required']">Password is required.</div>
+          <div *ngIf="f['password'].errors?.['minlength']">Minimum 8 characters required.</div>
+        </div>
+      </div>
+      <p class="text-xs text-gray-500 mb-4">Password must be at least 8 characters long</p>
+
+      <!-- Confirm Password -->
+      <div class="mb-4">
+        <input
+          type="password"
+          formControlName="confirmPassword"
+          placeholder="Confirm Password"
+          [ngClass]="{ 'border-red-500': f['confirmPassword'].invalid && f['confirmPassword'].touched }"
+          class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <div *ngIf="f['confirmPassword'].touched && f['confirmPassword'].invalid" class="text-red-500 text-sm mt-1">
+          <div *ngIf="f['confirmPassword'].errors?.['required']">Confirm Password is required.</div>
+          <div *ngIf="f['confirmPassword'].errors?.['passwordMismatch']">Passwords do not match.</div>
+        </div>
+      </div>
+
+      <!-- Dashboard Type -->
+      <!-- <div class="mb-4">
+        <select
+          formControlName="dashboardType"
+          [ngClass]="{ 'border-red-500': f['dashboardType'].invalid && f['dashboardType'].touched }"
+          class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
+          <option value="" disabled>Select dashboard type</option>
+          <option value="org_admin">Organization Admin</option>
+          <option value="org_user">Organization User</option>
+          <option value="nexus_user">Nexus User</option>
+          <option value="nexus_super_admin">Nexus Super Admin</option>
+        </select>
+        <div *ngIf="f['dashboardType'].touched && f['dashboardType'].invalid" class="text-red-500 text-sm mt-1">
+          Dashboard type is required.
+        </div>
+      </div> -->
+
+      <!-- Consent -->
+      <div class="mb-4">
+        <label class="inline-flex items-start text-sm text-gray-700">
+          <input
+            type="checkbox"
+            formControlName="consent"
+            class="form-checkbox mr-2 mt-1 text-blue-600"
+          />
+          I agree to the
+          <a href="#" class="text-blue-500 ml-1">Terms of Service</a> and
+          <a href="#" class="text-blue-500 ml-1">Privacy Policy</a>
+        </label>
+        <div *ngIf="f['consent'].touched && f['consent'].invalid" class="text-red-500 text-sm mt-1">
+          You must agree to continue.
+        </div>
+      </div>
+
+      <!-- Create Account Button -->
+      <button
+        type="submit"
+        class="bg-blue-600 text-white w-full p-2 rounded hover:bg-blue-700 flex items-center justify-center gap-2"
+      >
+        Create Account <span>👤</span>
+      </button>
+
+      <!-- Footer Link -->
+      <p class="mt-4 text-center text-sm">
+        Already have an account?
+        <a class="text-blue-600 font-medium hover:underline" routerLink="/auth/login">Log in</a>
+      </p>
+    </form>
+  </div>
+</div>

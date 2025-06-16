@@ -1,0 +1,64 @@
+<section class="bg-white py-12 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto text-center mb-12">
+    <h2 class="text-2xl sm:text-3xl font-bold text-gray-800">Powerful Features</h2>
+    <p class="mt-2 text-gray-600 text-sm sm:text-base max-w-2xl mx-auto">
+      Our platform offers everything you need to manage projects efficiently and collaborate seamlessly with your team.
+    </p>
+  </div>
+
+  <!-- Mobile: Horizontal Scroll -->
+  <div class="lg:hidden overflow-x-auto scroll-smooth scrollbar-hide px-1">
+    <div class="flex gap-4 w-max pb-4">
+      <ng-container *ngFor="let feature of features">
+        <div
+          class="min-w-[85vw] max-w-[90vw] bg-white border border-gray-200 rounded-2xl p-5 shadow-[0_4px_12px_rgba(0,0,0,0.05)] hover:shadow-md hover:-translate-y-1 transition-all duration-300 ease-in-out text-center"
+        >
+          <div class="bg-blue-100 text-blue-600 rounded-full p-3 w-fit mx-auto mb-4">
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              [innerHTML]="feature.icon"
+            ></svg>
+          </div>
+          <h3 class="font-semibold text-lg text-gray-800 mb-2">{{ feature.title }}</h3>
+          <p class="text-sm text-gray-600">{{ feature.description }}</p>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+
+  <!-- Desktop: Grid Layout -->
+  <div class="hidden lg:grid gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
+    <ng-container *ngFor="let feature of features | slice:0:(showAll ? features.length : 3)">
+      <div
+        class="bg-white border border-gray-200 rounded-2xl p-6 shadow-[0_4px_12px_rgba(0,0,0,0.05)] hover:shadow-md hover:-translate-y-1 transition-all duration-300 ease-in-out text-left"
+      >
+        <div class="bg-blue-100 text-blue-600 rounded-full p-3 w-fit mb-4">
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            [innerHTML]="feature.icon"
+          ></svg>
+        </div>
+        <h3 class="font-semibold text-lg text-gray-800 mb-2">{{ feature.title }}</h3>
+        <p class="text-sm text-gray-600">{{ feature.description }}</p>
+      </div>
+    </ng-container>
+  </div>
+
+  <!-- Desktop: Show More / Less Button -->
+  <div class="hidden lg:block text-center mt-8" *ngIf="features.length > 3">
+    <button
+      class="inline-block bg-blue-600 text-white px-6 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition"
+      (click)="showAll = !showAll"
+    >
+      {{ showAll ? 'Show Less Features' : 'Show More Features' }}
+    </button>
+  </div>
+</section>

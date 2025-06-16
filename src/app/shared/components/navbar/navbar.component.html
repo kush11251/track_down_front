@@ -1,0 +1,57 @@
+<nav class="bg-white shadow-md relative z-50">
+  <div class="container mx-auto flex justify-between items-center p-4">
+    <!-- Logo -->
+    <div class="text-lg font-semibold text-gray-800 flex items-center">
+      <svg class="h-6 inline-block mr-2 text-blue-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill="currentColor">
+        <path d="M264.5 5.2c14.9-6.9 32.1-6.9 47 0l218.6 101c8.5 3.9 13.9 12.4 13.9 21.8s-5.4 17.9-13.9 21.8l-218.6 101c-14.9 6.9-32.1 6.9-47 0L45.9 149.8C37.4 145.8 32 137.3 32 128s5.4-17.9 13.9-21.8L264.5 5.2zM476.9 209.6l53.2 24.6c8.5 3.9 13.9 12.4 13.9 21.8s-5.4 17.9-13.9 21.8l-218.6 101c-14.9 6.9-32.1 6.9-47 0L45.9 277.8C37.4 273.8 32 265.3 32 256s5.4-17.9 13.9-21.8l53.2-24.6 152 70.2c23.4 10.8 50.4 10.8 73.8 0l152-70.2zm-152 198.2l152-70.2 53.2 24.6c8.5 3.9 13.9 12.4 13.9 21.8s-5.4 17.9-13.9 21.8l-218.6 101c-14.9 6.9-32.1 6.9-47 0L45.9 405.8C37.4 401.8 32 393.3 32 384s5.4-17.9 13.9-21.8l53.2-24.6 152 70.2c23.4 10.8 50.4 10.8 73.8 0z"/>
+      </svg>
+      Project Nexus
+    </div>
+
+    <!-- Hamburger Button -->
+    <button class="md:hidden text-gray-600 focus:outline-none relative z-50" (click)="toggleMenu()">
+      <div class="w-6 h-6 relative">
+        <span [ngClass]="mobileMenuOpen ? 'rotate-45 top-2.5' : 'top-1'" class="block absolute h-0.5 w-6 bg-gray-800 transform transition duration-300"></span>
+        <span [ngClass]="mobileMenuOpen ? 'opacity-0' : 'top-2.5'" class="block absolute h-0.5 w-6 bg-gray-800 transform transition duration-300"></span>
+        <span [ngClass]="mobileMenuOpen ? '-rotate-45 bottom-2.5' : 'bottom-1'" class="block absolute h-0.5 w-6 bg-gray-800 transform transition duration-300"></span>
+      </div>
+    </button>
+
+    <!-- Desktop Nav -->
+    <div class="hidden md:flex space-x-6 items-center">
+      <a href="#" class="text-gray-600 hover:text-blue-600 transition">Home</a>
+      <a href="#" class="text-gray-600 hover:text-blue-600 transition">Features</a>
+      <a href="#" class="text-gray-600 hover:text-blue-600 transition">Pricing</a>
+      <a href="#" class="text-gray-600 hover:text-blue-600 transition">Contact</a>
+    </div>
+
+    <!-- Desktop Auth -->
+    <div class="hidden md:flex items-center space-x-4">
+      <a routerLink="/auth/login" class="text-gray-600 hover:text-blue-600 transition">Login</a>
+      <a routerLink="/auth/signup" class="bg-blue-600 text-white px-4 py-1 rounded hover:bg-blue-700 transition">Register</a>
+    </div>
+  </div>
+
+  <!-- Overlay -->
+  <div 
+    class="fixed inset-0 bg-black/30 backdrop-blur-sm transition-opacity duration-300 md:hidden z-40"
+    *ngIf="mobileMenuOpen"
+    (click)="toggleMenu()"
+  ></div>
+
+  <!-- Mobile Sidebar Menu -->
+  <div 
+    class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 z-50 p-6 md:hidden backdrop-blur-md"
+    [ngClass]="{ 'translate-x-0': mobileMenuOpen, 'translate-x-full': !mobileMenuOpen }"
+  >
+    <nav class="flex flex-col space-y-6 animate-fade-in">
+      <a href="#" class="text-gray-700 font-medium hover:text-blue-600 transition duration-200">Home</a>
+      <a href="#" class="text-gray-700 font-medium hover:text-blue-600 transition duration-200 delay-75">Features</a>
+      <a href="#" class="text-gray-700 font-medium hover:text-blue-600 transition duration-200 delay-100">Pricing</a>
+      <a href="#" class="text-gray-700 font-medium hover:text-blue-600 transition duration-200 delay-150">Contact</a>
+      <hr class="my-2" />
+      <a routerLink="/auth/login" class="text-gray-600 hover:text-blue-600">Login</a>
+      <a routerLink="/auth/signup" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 text-center transition">Register</a>
+    </nav>
+  </div>
+</nav>

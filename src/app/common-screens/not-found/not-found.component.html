@@ -1,0 +1,27 @@
+<div class="min-h-screen flex items-center justify-center bg-gray-100 px-4 animate-fade-in">
+  <div class="text-center max-w-md w-full space-y-6">
+
+    <!-- Inline SVG Image -->
+    <svg class="w-full max-w-xs mx-auto" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M256 0C114.8 0 0 114.8 0 256s114.8 256 256 256 256-114.8 256-256S397.2 0 256 0z" fill="#EDF2F7"/>
+      <path d="M256 100c-86 0-156 70-156 156s70 156 156 156 156-70 156-156S342 100 256 100zm0 260c-57.4 0-104-46.6-104-104s46.6-104 104-104 104 46.6 104 104-46.6 104-104 104z" fill="#4A5568"/>
+      <circle cx="196" cy="224" r="16" fill="#2D3748"/>
+      <circle cx="316" cy="224" r="16" fill="#2D3748"/>
+      <path d="M196 312c16 8 48 8 64 0" stroke="#2D3748" stroke-width="12" stroke-linecap="round"/>
+    </svg>
+
+    <!-- Text -->
+    <h1 class="text-3xl sm:text-4xl font-bold text-gray-800">Page Not Found</h1>
+    <p class="text-gray-600 text-sm sm:text-base">
+      Oops! The page you’re looking for doesn’t exist or has been moved.
+    </p>
+
+    <!-- Button -->
+    <button
+      (click)="goHome()"
+      class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full transition shadow-md"
+    >
+      Go to Home
+    </button>
+  </div>
+</div>
