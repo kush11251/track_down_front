@@ -54,9 +54,7 @@
               "optimization": true,
               "extractLicenses": true,
               "sourceMap": false,
-              "namedChunks": false,
-              "vendorChunk": false,
-              "buildOptimizer": true
+              "namedChunks": false
             },
             "uat": {
               "fileReplacements": [
@@ -69,9 +67,7 @@
               "outputHashing": "all",
               "extractLicenses": true,
               "sourceMap": true,
-              "namedChunks": true,
-              "vendorChunk": true,
-              "buildOptimizer": true
+              "namedChunks": true
             },
             "development": {
               "optimization": false,
