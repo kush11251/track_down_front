@@ -25,4 +25,11 @@ export class FooterComponent {
 
     this.router.navigateByUrl('/auth/' + route)
   }
+
+  scrollToTop(): void {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
 }
