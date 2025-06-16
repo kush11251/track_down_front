@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
-    { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+    { path: '', redirectTo: '', pathMatch: 'full' },
     {
-        path: 'dashboard',
+        path: '',
         loadChildren: () =>
         import('./dashboard/dashboard.module').then((m) => m.DashboardModule),
     },

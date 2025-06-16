@@ -19,16 +19,16 @@
 
     <!-- Desktop Nav -->
     <div class="hidden md:flex space-x-6 items-center">
-      <a href="#" class="text-gray-600 hover:text-blue-600 transition">Home</a>
-      <a href="#" class="text-gray-600 hover:text-blue-600 transition">Features</a>
-      <a href="#" class="text-gray-600 hover:text-blue-600 transition">Pricing</a>
-      <a href="#" class="text-gray-600 hover:text-blue-600 transition">Contact</a>
+      <p class="text-gray-600 hover:text-blue-600 transition" (click)="navigate('')">Home</p>
+      <p class="text-gray-600 hover:text-blue-600 transition" (click)="navigate('features')">Features</p>
+      <p class="text-gray-600 hover:text-blue-600 transition" (click)="navigate('pricing')">Pricing</p>
+      <p class="text-gray-600 hover:text-blue-600 transition" (click)="navigate('contact')">Contact</p>
     </div>
 
     <!-- Desktop Auth -->
     <div class="hidden md:flex items-center space-x-4">
-      <a routerLink="/auth/login" class="text-gray-600 hover:text-blue-600 transition">Login</a>
-      <a routerLink="/auth/signup" class="bg-blue-600 text-white px-4 py-1 rounded hover:bg-blue-700 transition">Register</a>
+      <p class="text-gray-600 hover:text-blue-600 transition" (click)="navigateAuth('login')">Login</p>
+      <p class="bg-blue-600 text-white px-4 py-1 rounded hover:bg-blue-700 transition" (click)="navigateAuth('signup')">Register</p>
     </div>
   </div>
 
@@ -45,13 +45,13 @@
     [ngClass]="{ 'translate-x-0': mobileMenuOpen, 'translate-x-full': !mobileMenuOpen }"
   >
     <nav class="flex flex-col space-y-6 animate-fade-in">
-      <a href="#" class="text-gray-700 font-medium hover:text-blue-600 transition duration-200">Home</a>
-      <a href="#" class="text-gray-700 font-medium hover:text-blue-600 transition duration-200 delay-75">Features</a>
-      <a href="#" class="text-gray-700 font-medium hover:text-blue-600 transition duration-200 delay-100">Pricing</a>
-      <a href="#" class="text-gray-700 font-medium hover:text-blue-600 transition duration-200 delay-150">Contact</a>
+      <p class="text-gray-700 font-medium hover:text-blue-600 transition duration-200" (click)="navigate('')">Home</p>
+      <p class="text-gray-700 font-medium hover:text-blue-600 transition duration-200 delay-75" (click)="navigate('features')">Features</p>
+      <p class="text-gray-700 font-medium hover:text-blue-600 transition duration-200 delay-100" (click)="navigate('pricing')">Pricing</p>
+      <p class="text-gray-700 font-medium hover:text-blue-600 transition duration-200 delay-150" (click)="navigate('contact')">Contact</p>
       <hr class="my-2" />
-      <a routerLink="/auth/login" class="text-gray-600 hover:text-blue-600">Login</a>
-      <a routerLink="/auth/signup" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 text-center transition">Register</a>
+      <p class="text-gray-600 hover:text-blue-600" (click)="navigateAuth('login')">Login</p>
+      <p class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 text-center transition" (click)="navigateAuth('signup')">Register</p>
     </nav>
   </div>
 </nav>

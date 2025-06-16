@@ -4,6 +4,7 @@ import { BaseComponent } from './base/base.component';
 
 const routes: Routes = [
   { path: '', component: BaseComponent },
+  { path: 'home', component: BaseComponent },
 ];
 
 @NgModule({
