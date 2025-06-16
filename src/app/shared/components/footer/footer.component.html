@@ -10,10 +10,10 @@
       </div>
       <p class="text-sm">Empowering teams to deliver projects efficiently and on time.</p>
       <div class="flex space-x-3 mt-4 text-white">
-        <a href="#" class="hover:text-blue-400"><i class="fab fa-twitter"></i></a>
-        <a href="#" class="hover:text-blue-400"><i class="fab fa-linkedin-in"></i></a>
-        <a href="#" class="hover:text-blue-400"><i class="fab fa-github"></i></a>
-        <a href="#" class="hover:text-blue-400"><i class="fab fa-instagram"></i></a>
+        <p class="hover:text-blue-400"><i class="fab fa-twitter"></i></p>
+        <p class="hover:text-blue-400"><i class="fab fa-linkedin-in"></i></p>
+        <p class="hover:text-blue-400"><i class="fab fa-github"></i></p>
+        <p class="hover:text-blue-400"><i class="fab fa-instagram"></i></p>
       </div>
     </div>
 
@@ -21,10 +21,10 @@
     <div>
       <h3 class="text-white font-semibold mb-3">Product</h3>
       <ul class="space-y-2 text-sm">
-        <li><a href="#" class="hover:text-white">Features</a></li>
-        <li><a href="#" class="hover:text-white">Pricing</a></li>
-        <li><a href="#" class="hover:text-white">Ussage</a></li>
-        <li><a href="#" class="hover:text-white">Documentation</a></li>
+        <li><p class="hover:text-white" (click)="navigate('common/features')">Features</p></li>
+        <li><p class="hover:text-white" (click)="navigate('common/pricing')">Pricing</p></li>
+        <li><p class="hover:text-white" (click)="navigate('common/ussage')">Ussage</p></li>
+        <li><p class="hover:text-white" (click)="navigate('common/documentation')">Documentation</p></li>
       </ul>
     </div>
 
@@ -32,11 +32,11 @@
     <div>
       <h3 class="text-white font-semibold mb-3">Company</h3>
       <ul class="space-y-2 text-sm">
-        <li><a href="#" class="hover:text-white">About Us</a></li>
-        <li><a href="#" class="hover:text-white">Careers</a></li>
-        <li><a href="#" class="hover:text-white">Blog</a></li>
-        <li><a href="#" class="hover:text-white">Press</a></li>
-        <li><a href="#" class="hover:text-white">Contact</a></li>
+        <li><p class="hover:text-white" (click)="navigate('common/about')">About Us</p></li>
+        <li><p class="hover:text-white" (click)="navigate('common/careers')">Careers</p></li>
+        <li><p class="hover:text-white" (click)="navigate('common/blog')">Blog</p></li>
+        <li><p class="hover:text-white" (click)="navigate('common/press')">Press</p></li>
+        <li><p class="hover:text-white" (click)="navigate('common/contact')">Contact</p></li>
       </ul>
     </div>
 
@@ -44,10 +44,10 @@
     <div>
       <h3 class="text-white font-semibold mb-3">Legal</h3>
       <ul class="space-y-2 text-sm">
-        <li><a href="#" class="hover:text-white">Terms of Service</a></li>
-        <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
-        <li><a href="#" class="hover:text-white">Security</a></li>
-        <li><a href="#" class="hover:text-white">Cookie Policy</a></li>
+        <li><p class="hover:text-white" (click)="navigate('common/terms')">Terms of Service</p></li>
+        <li><p class="hover:text-white" (click)="navigate('common/privacy')">Privacy Policy</p></li>
+        <li><p class="hover:text-white" (click)="navigate('common/security')">Security</p></li>
+        <li><p class="hover:text-white" (click)="navigate('common/cookie')">Cookie Policy</p></li>
       </ul>
     </div>
   </div>

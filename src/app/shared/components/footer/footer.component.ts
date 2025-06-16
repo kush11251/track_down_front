@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-footer',
@@ -9,5 +10,19 @@ import { Component } from '@angular/core';
   styleUrl: './footer.component.css'
 })
 export class FooterComponent {
+  constructor(
+    private router: Router
+  ) {}
 
+  navigate(route: string) {
+    console.log("Dashboard Route: ", route)
+
+    this.router.navigateByUrl('/' + route)
+  }
+
+  navigateAuth(route: string) {
+    console.log("Dashboard Route: ", route)
+
+    this.router.navigateByUrl('/auth/' + route)
+  }
 }
