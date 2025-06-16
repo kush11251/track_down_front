@@ -35,26 +35,14 @@
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
+                  "with": "src/environments/environment.uat.ts"
                 }
               ],
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "500kB",
-                  "maximumError": "1MB"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "100kB",
-                  "maximumError": "150kB"
-                }
-              ],
-              "outputHashing": "all",
               "optimization": true,
+              "outputHashing": "all",
               "extractLicenses": true,
-              "sourceMap": false,
-              "namedChunks": false
+              "sourceMap": true,
+              "namedChunks": true
             },
             "uat": {
               "fileReplacements": [
