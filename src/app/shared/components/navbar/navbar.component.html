@@ -20,9 +20,9 @@
     <!-- Desktop Nav -->
     <div class="hidden md:flex space-x-6 items-center">
       <p class="text-gray-600 hover:text-blue-600 transition" (click)="navigate('')">Home</p>
-      <p class="text-gray-600 hover:text-blue-600 transition" (click)="navigate('features')">Features</p>
-      <p class="text-gray-600 hover:text-blue-600 transition" (click)="navigate('pricing')">Pricing</p>
-      <p class="text-gray-600 hover:text-blue-600 transition" (click)="navigate('contact')">Contact</p>
+      <p class="text-gray-600 hover:text-blue-600 transition" (click)="navigate('common/features')">Features</p>
+      <p class="text-gray-600 hover:text-blue-600 transition" (click)="navigate('common/pricing')">Pricing</p>
+      <p class="text-gray-600 hover:text-blue-600 transition" (click)="navigate('common/contact')">Contact</p>
     </div>
 
     <!-- Desktop Auth -->
@@ -46,9 +46,9 @@
   >
     <nav class="flex flex-col space-y-6 animate-fade-in">
       <p class="text-gray-700 font-medium hover:text-blue-600 transition duration-200" (click)="navigate('')">Home</p>
-      <p class="text-gray-700 font-medium hover:text-blue-600 transition duration-200 delay-75" (click)="navigate('features')">Features</p>
-      <p class="text-gray-700 font-medium hover:text-blue-600 transition duration-200 delay-100" (click)="navigate('pricing')">Pricing</p>
-      <p class="text-gray-700 font-medium hover:text-blue-600 transition duration-200 delay-150" (click)="navigate('contact')">Contact</p>
+      <p class="text-gray-700 font-medium hover:text-blue-600 transition duration-200 delay-75" (click)="navigate('common/features')">Features</p>
+      <p class="text-gray-700 font-medium hover:text-blue-600 transition duration-200 delay-100" (click)="navigate('common/pricing')">Pricing</p>
+      <p class="text-gray-700 font-medium hover:text-blue-600 transition duration-200 delay-150" (click)="navigate('common/contact')">Contact</p>
       <hr class="my-2" />
       <p class="text-gray-600 hover:text-blue-600" (click)="navigateAuth('login')">Login</p>
       <p class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 text-center transition" (click)="navigateAuth('signup')">Register</p>

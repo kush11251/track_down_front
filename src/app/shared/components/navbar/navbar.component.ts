@@ -21,12 +21,16 @@ export class NavbarComponent {
   }
 
   navigate(route: string) {
+    this.toggleMenu()
+
     console.log("Dashboard Route: ", route)
 
     this.router.navigateByUrl('/' + route)
   }
 
   navigateAuth(route: string) {
+    this.toggleMenu()
+
     console.log("Dashboard Route: ", route)
 
     this.router.navigateByUrl('/auth/' + route)
