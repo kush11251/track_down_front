@@ -6,44 +6,44 @@ import { Component } from '@angular/core';
   styleUrl: './pricing.component.css'
 })
 export class PricingComponent {
-  members = 5;
-  selectedPlan = 'pro';
+  selectedPlan = 'free';
+  members = 1;
+  maxMembers = 100;
+  totalPrice = 0;
 
   plans = [
     {
       id: 'free',
-      name: 'Free',
+      name: 'Starter',
       price: 0,
-      maxMembers: 5,
-      features: ['1 User', 'Basic Support', 'Limited Projects'],
+      features: ['Basic analytics', 'Community support']
     },
     {
       id: 'pro',
       name: 'Pro',
-      price: 15,
-      maxMembers: 300,
-      features: ['Up to 100 Users', 'Priority Support', 'Unlimited Projects'],
+      price: 300,
+      features: ['Advanced insights', 'Email support', 'Unlimited members']
     },
     {
       id: 'enterprise',
       name: 'Enterprise',
-      price: 30,
-      maxMembers: 300,
-      features: ['Unlimited Users', 'Dedicated Success Manager', 'Advanced Reports'],
-    },
+      price: 500,
+      features: ['Custom dashboards', 'Dedicated support', 'Integration with Jira & Slack']
+    }
   ];
 
-  get totalPrice(): number {
-    const plan = this.plans.find((p) => p.id === this.selectedPlan);
-    return plan ? plan.price * this.members : 0;
+  get displayMembers(): number {
+    return this.members;
   }
 
-  get maxMembers(): number {
-    const plan = this.plans.find((p) => p.id === this.selectedPlan);
-    return plan?.maxMembers || 1;
+  updatePrice() {
+    const plan = this.plans.find(p => p.id === this.selectedPlan);
+    this.totalPrice = plan?.price ? plan.price * this.members : 0;
   }
 
-  get displayMembers(): string {
-    return this.selectedPlan === 'enterprise' && this.members >= 300 ? '300+' : this.members.toString();
+  selectPlan(planId: string) {
+    this.selectedPlan = planId;
+    this.members = 1; // reset to default
+    this.updatePrice();
   }
 }

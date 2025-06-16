@@ -13,7 +13,7 @@ export class PricingComponent implements AfterViewInit{
     {
       title: 'Free',
       description: 'For individuals & small teams',
-      price: '$0/month',
+      price: '0 ₹/month',
       features: [
         'Up to 5 projects',
         'Basic analytics',
@@ -26,7 +26,7 @@ export class PricingComponent implements AfterViewInit{
     {
       title: 'Pro',
       description: 'For growing teams',
-      price: '$29/month',
+      price: '300 ₹/month',
       features: [
         'Unlimited projects',
         'Advanced analytics',
@@ -40,7 +40,7 @@ export class PricingComponent implements AfterViewInit{
     {
       title: 'Enterprise',
       description: 'For large organizations',
-      price: '$99/month',
+      price: '500+ ₹/month',
       features: [
         'Unlimited everything',
         'Custom analytics',
