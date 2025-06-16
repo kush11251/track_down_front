@@ -7,6 +7,16 @@ import { FeaturesComponent } from './features/features.component';
 import { PricingComponent } from './pricing/pricing.component';
 import { ContactComponent } from './contact/contact.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TermesComponent } from './termes/termes.component';
+import { AboutComponent } from './about/about.component';
+import { PrivacyComponent } from './privacy/privacy.component';
+import { SecurityComponent } from './security/security.component';
+import { CookieComponent } from './cookie/cookie.component';
+import { PressComponent } from './press/press.component';
+import { BlogComponent } from './blog/blog.component';
+import { CareersComponent } from './careers/careers.component';
+import { UssageComponent } from './ussage/ussage.component';
+import { DocumentationComponent } from './documentation/documentation.component';
 
 
 @NgModule({
@@ -15,6 +25,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FeaturesComponent,
     PricingComponent,
     ContactComponent,
+    TermesComponent,
+    PrivacyComponent,
+    SecurityComponent,
+    AboutComponent,
+    PressComponent,
+    BlogComponent,
+    CareersComponent,
+    UssageComponent,
+    DocumentationComponent
   ],
   imports: [
     CommonModule,
