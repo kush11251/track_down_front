@@ -17,6 +17,7 @@ import { BlogComponent } from './blog/blog.component';
 import { CareersComponent } from './careers/careers.component';
 import { UssageComponent } from './ussage/ussage.component';
 import { DocumentationComponent } from './documentation/documentation.component';
+import { PdfViewComponent } from '../shared/components/pdf-view/pdf-view.component';
 
 
 @NgModule({
@@ -33,12 +34,14 @@ import { DocumentationComponent } from './documentation/documentation.component'
     BlogComponent,
     CareersComponent,
     UssageComponent,
-    DocumentationComponent
+    DocumentationComponent,
+    CookieComponent
   ],
   imports: [
     CommonModule,
     CommonScreensRoutingModule,
-    FormsModule
+    FormsModule,
+    PdfViewComponent,
   ]
 })
 export class CommonScreensModule { }

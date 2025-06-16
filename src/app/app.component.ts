@@ -8,7 +8,6 @@ import { ToastComponent } from './shared/components/toast/toast.component';
 import { UtilsService } from './shared/services/utils.service';
 import { ApiService } from './shared/services/api.service';
 import { ToastService } from './shared/services/toast.service';
-
 @Component({
   selector: 'app-root',
   standalone: true,
